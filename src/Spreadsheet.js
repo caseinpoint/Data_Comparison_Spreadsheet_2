@@ -171,19 +171,21 @@ export default class Spreadsheet {
 		for (let row of this.rows) {
 			let scores = []
 			for (let i = 0; i < this.columnTypes.length - 1; i++) {
-				if (this.columnTypes[i] !== 't') {
+				if (this.columnTypes[i] === '+' || this.columnTypes[i] === '-') {
 					const name = this.columnNames[i];
 					scores.push(row[name]['score']);
 				}
 			}
-			row['__avg__']['value'] = Spreadsheet.average(scores);
+			if (scores.length > 0) {
+				row['__avg__']['value'] = Spreadsheet.average(scores);
+			}
 		}
 	}
 
 	calculateAllScores() {
 		// last column __avg__ doesn't need a score
 		for (let i = 0; i < this.columnTypes.length - 1; i++) {
-			if (this.columnTypes[i] !== 't') {
+			if (this.columnTypes[i] === '+' || this.columnTypes[i] === '-') {
 				this.calculateColumnScores(i);
 			}
 		}
@@ -222,7 +224,7 @@ export default class Spreadsheet {
 // sheet.setValue(0,2, Math.floor(Math.random() * 100));
 // sheet.addRow();
 // sheet.setValue(1,0, 'world');
-// sheet.setValue(1,2, Math.floor(Math.random() * 100));
+// sheet.setValue(1,1, Math.floor(Math.random() * 100));
 // sheet.setValue(1,2, Math.floor(Math.random() * 100));
 // sheet.addRow();
 // sheet.setValue(2,0, 'zap');
