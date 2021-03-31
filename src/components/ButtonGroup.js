@@ -27,8 +27,9 @@ export default class ButtonGroup extends React.Component {
 		return (
 			<div className="border py-1 px-3">
 				<button id="addRow" className="btn btn-success" onClick={this.handleClick}>Add Row</button>
-				<button id="delRow" className="btn btn-danger ml-3" onClick={this.handleClick}>Delete Bottom Row</button>
+				<button id="delRow" className="btn btn-danger ml-1" onClick={this.handleClick}>Delete Bottom Row</button>
 				<button id="delCol" className="btn btn-danger ml-3" onClick={this.handleClick}>Delete Last Column</button>
+				<span className="ml-3">Double click cells to edit.</span>
 			</div>
 		);
 	}

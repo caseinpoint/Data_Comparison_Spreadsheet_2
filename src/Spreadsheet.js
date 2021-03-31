@@ -130,7 +130,6 @@ export default class Spreadsheet {
 		}
 	}
 
-	/* score 1 to 10 based on PERCENTRANK from Excel */
 	static percentRankScore(arr, num) {
 		let smaller = 0;
 		let larger = 0;
@@ -139,7 +138,7 @@ export default class Spreadsheet {
 			else if (n > num) larger++;
 		}
 		if (smaller === 0 && larger === 0) return 10;
-		else return smaller / (smaller + larger) * 9 + 1;
+		return smaller / (smaller + larger) * 9 + 1;
 	}
 
 	calculateColumnScores(colNum) {

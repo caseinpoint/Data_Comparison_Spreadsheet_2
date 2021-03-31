@@ -92,6 +92,7 @@ export default class Table extends React.Component {
 					</table>
 				</div>
 				<ButtonGroup key="buttonGroup" sheet={this.state.sheet} sheetUpdated={this.sheetUpdated}/>
+				<p>Select "Large Number" to create a column that scores larger numbers higher. Select "Small Number" to create a column that scores smaller numbers higher. All scores are from 1 to 10 and are calculated based on that cell's percent rank in the column. Click on column headers to sort the rows by that column.</p>
 			</div>
 		);
 	}

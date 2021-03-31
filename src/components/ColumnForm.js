@@ -70,13 +70,13 @@ export default class ColumnForm extends React.Component {
 				<div className="form-check">
 					<input type="radio" className="form-check-input ml-3" name="newColType" id="newColText"
 					checked={this.state.newColText} onChange={this.handleInputChange}/>
-					<label className="form-check-label">Text</label>
-					<input type="radio" className="form-check-input ml-1" name="newColType" id="newColBig"
+					<label className="form-check-label" for="newColText">Text</label>
+					<input type="radio" className="form-check-input ml-2" name="newColType" id="newColBig"
 					checked={this.state.newColBig} onChange={this.handleInputChange}/>
-					<label className="form-check-label">Large Number</label>
-					<input type="radio" className="form-check-input ml-1" name="newColType" id="newColSmall"
+					<label className="form-check-label" for="newColBig">Large Number</label>
+					<input type="radio" className="form-check-input ml-2" name="newColType" id="newColSmall"
 					checked={this.state.newColSmall} onChange={this.handleInputChange}/>
-					<label className="form-check-label">Small Number</label>
+					<label className="form-check-label" for="newColSmall">Small Number</label>
 				</div>
 				<button className="btn btn-primary ml-3" type="submit">Add Column</button>
 				<p className="text-danger">{this.state.errorText}</p>
